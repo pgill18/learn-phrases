@@ -76,7 +76,9 @@ function testSpeech() {
     var speechResult = event.results[0][0].transcript.toLowerCase();
     diagnosticPara.textContent = 'Speech received: ' + speechResult + '.';
     // if(speechResult === phrase) {
-    let phrase_pattern = phrase.replace(/\s+/g, "\\s*");
+    let phrase_pattern = phrase;
+    phrase_pattern = phrase_pattern.replace(/(\w+)\*/g, "($1)*");
+    phrase_pattern = phrase_pattern.replace(/\s+/g, "\\s*");
     console.log(phrase_pattern);
     if(speechResult.match(phrase_pattern)) {
       resultPara.textContent = 'I heard the correct phrase!';
