@@ -70,7 +70,7 @@ function select_index(index) {
 }
 
 let score = { total: 0, correct: 0, incorrect: 0, proper: 0, width: 0, depth: 0, filled: 0, count: dataset.length };
-let settings = { prompter: 1 };
+let settings = { prompter: 0 };
 
 var phrasePara = document.querySelector('.phrase');
 var resultPara = document.querySelector('.result');
